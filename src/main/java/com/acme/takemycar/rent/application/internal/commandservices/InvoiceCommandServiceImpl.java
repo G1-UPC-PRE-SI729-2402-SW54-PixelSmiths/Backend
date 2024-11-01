@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class InvoiceCommandServicelmpl implements InvoiceCommandService {
+public class InvoiceCommandServiceImpl implements InvoiceCommandService {
     private final InvoiceRepository invoiceRepository;
-    public InvoiceCommandServicelmpl(InvoiceRepository invoiceRepository) {
+    public InvoiceCommandServiceImpl(InvoiceRepository invoiceRepository) {
         this.invoiceRepository = invoiceRepository;
     }
 

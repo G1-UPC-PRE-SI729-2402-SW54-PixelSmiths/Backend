@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class InvoiceQueryServicelmpl implements InvoiceQueryService {
+public class InvoiceQueryServiceImpl implements InvoiceQueryService {
     private final InvoiceRepository invoiceRepository;
-    public InvoiceQueryServicelmpl(InvoiceRepository invoiceRepository) {
+    public InvoiceQueryServiceImpl(InvoiceRepository invoiceRepository) {
         this.invoiceRepository = invoiceRepository;
     }
 
