@@ -1,10 +1,16 @@
 spring.application.name=takemycar
 
 # Spring DataSource Configuration
-spring.datasource.url=jdbc:postgresql://localhost:5432/takemycar
-spring.datasource.username=postgres
-spring.datasource.password=12345678
+#spring.datasource.url=jdbc:postgresql://dpg-cstrbatumphs73bl5vug-a.oregon-postgres.render.com/takemycar
+#spring.datasource.username=takemycar_user
+#spring.datasource.password=SPRING_DATASOURCE_PASSWORD
 spring.datasource.driver-class-name=org.postgresql.Driver
+
+spring.datasource.url=${SPRING_DATASOURCE_URL}
+spring.datasource.username=${SPRING_DATASOURCE_USERNAME}
+spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
+#spring.datasource.driver-class-name=org.postgresql.Driver
+
 
 # Spring Data JPA Configuration
 spring.jpa.show-sql=true
@@ -13,7 +19,7 @@ spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.open-in-view=true
 
-spring.jpa.hibernate.naming.physical-strategy=pe.upc.learningcenterplatform.shared.domain.model.strategy.SnakeCaseWithPluralizedTablePhysicalNamingStrategy
+spring.jpa.hibernate.naming.physical-strategy=com.acme.takemycar.shared.domain.model.strategy.SnakeCaseWithPluralizedTablePhysicalNamingStrategy
 
 # JWT Configuration Properties
 authorization.jwt.secret=WriteHereYourSecretKeyForTokenJWT
