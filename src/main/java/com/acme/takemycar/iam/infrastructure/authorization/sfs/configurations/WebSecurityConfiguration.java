@@ -60,7 +60,7 @@ public class WebSecurityConfiguration {
                         customizer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests.requestMatchers(
-                                "/api/vi/authentication/**",
+                                "/api/v1/authentication/**",
                                 "/v3/api-docs/**",
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",
@@ -71,6 +71,13 @@ public class WebSecurityConfiguration {
 
         http.addFilterBefore(authorizationRequestFilter(), UsernamePasswordAuthenticationFilter.class);
 
+        http.cors(configurer -> configurer.configurationSource(_configurer -> {
+            var cors = new CorsConfiguration();
+            cors.setAllowedOrigins(List.of("*"));
+            cors.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
+            cors.setAllowedHeaders(List.of("*"));
+            return cors;
+        }));
         return http.build();
     }
 
